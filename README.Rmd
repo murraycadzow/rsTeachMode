@@ -18,39 +18,26 @@ knitr::opts_chunk$set(
 <!-- badges: start -->
 [![Lifecycle: experimental](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](https://www.tidyverse.org/lifecycle/#experimental)
 [![CRAN status](https://www.r-pkg.org/badges/version/rstudioTeachMode)](https://CRAN.R-project.org/package=rstudioTeachMode)
+[![Codecov test coverage](https://codecov.io/gh/murraycadzow/rstudioTeachMode/branch/master/graph/badge.svg)](https://codecov.io/gh/murraycadzow/rstudioTeachMode?branch=master)
+[![R build status](https://github.com/murraycadzow/rstudioTeachMode/workflows/R-CMD-check/badge.svg)](https://github.com/murraycadzow/rstudioTeachMode/actions)
 <!-- badges: end -->
 
-The goal of rstudioTeachMode is to ...
+The goal of rstudioTeachMode is to provide an easy mechanism to switch between theme preferences for personal use and theme preferences for a teaching environment.
 
 ## Installation
 
-You can install the released version of rstudioTeachMode from [CRAN](https://CRAN.R-project.org) with:
+This package is under development and very experimental but can be installed from github using
 
 ``` r
-install.packages("rstudioTeachMode")
+remotes::install_github("murraycadzow/rstudioTeachMode")
 ```
 
 ## Example
 
 This is a basic example which shows you how to solve a common problem:
 
-```{r example}
+```{r example, eval = FALSE}
 library(rstudioTeachMode)
 ## basic example code
 ```
 
-What is special about using `README.Rmd` instead of just `README.md`? You can include R chunks like so:
-
-```{r cars}
-summary(cars)
-```
-
-You'll still need to render `README.Rmd` regularly, to keep `README.md` up-to-date.
-
-You can also embed plots, for example:
-
-```{r pressure, echo = FALSE}
-plot(pressure)
-```
-
-In that case, don't forget to commit and push the resulting figure files, so they display on GitHub!
