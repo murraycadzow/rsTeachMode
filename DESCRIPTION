@@ -1,15 +1,15 @@
 Package: rstudioTeachMode
-Title: What the Package Does (One Line, Title Case)
+Title: Switch Between Personal and Teaching Display Preferences
 Version: 0.0.1
 Authors@R: 
-    person(given = "First",
-           family = "Last",
+    person(given = "Murray",
+           family = "Cadzow",
            role = c("aut", "cre"),
-           email = "first.last@example.com",
-           comment = c(ORCID = "YOUR-ORCID-ID"))
+           email = "murray.cadzow@otago.ac.nz",
+           comment = c(ORCID = "0000-0002-2299-4136"))
 Author: Murray Cadzow
 Maintainer: Murray Cadzow <murray.cadzow@otago.ac.nz>
-Description: What the package does (one paragraph).
+Description: This package enables the easy switching between your personal theme preferences and theme preferences suited for teaching.
 License: MIT + file LICENSE
 Suggests: 
     testthat
