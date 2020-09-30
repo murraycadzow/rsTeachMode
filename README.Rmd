@@ -55,7 +55,7 @@ Insert the following into your .Rprofile
 
 
 
-The you can run `.toggle` when you want to switch between user and teaching mode.
+The you can run `.toggle()` when you want to switch between user and teaching mode.
 
 ## Installation
 
