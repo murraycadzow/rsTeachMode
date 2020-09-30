@@ -31,16 +31,15 @@ have `{usethis}` installed) by using `usethis::edit_r_profile()`
   rstudioTeachMode_options <-  getOption("rstudioTeachMode")
   if (is.null(rstudioTeachMode_options)) rstudioTeachMode_options <- list(mode = "user")
   
-
-    # teach -> user
+  # teach -> user
   if (rstudioTeachMode_options$mode == "teach") {
     # select what you want your user settings to be here
     rstudioapi::writeRStudioPreference("font_size_points", 12L) # number has to be integer
-    rstudioapi::applyTheme("Solarized Light")
+    rstudioapi::applyTheme("Solarized Light") # insert name of theme for user here
   } else {# user -> teach
     # select what you want your teaching settings to be
     rstudioapi::writeRStudioPreference("font_size_points", 24L) # number has to be integer
-    rstudioapi::applyTheme("Chrome")
+    rstudioapi::applyTheme("Chrome") # insert name of theme for teaching here
   }
   
   # flip the mode in the stored options
