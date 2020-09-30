@@ -33,6 +33,9 @@ Insert the following into your `.Rprofile` which can be opened (if you have `{us
 
 
 ```{r}
+# Toggle between user rstudio preferences and teaching preferences
+# Changes theme and font sizes
+# Requires {rstudioapi} to be installed
 .toggle <- function(){
   # Assumes you are in user mode if first time running in session
   rstudioTeachMode_options <-  getOption("rstudioTeachMode")
