@@ -18,6 +18,8 @@ The goal of rstudioTeachMode is to provide an easy mechanism to switch
 between theme preferences for personal use and theme preferences for a
 teaching environment.
 
+**This is extremely experimental**
+
 ## No installation option:
 
 Insert the following into your .Rprofile
@@ -46,13 +48,13 @@ Insert the following into your .Rprofile
 }
 ```
 
-The you can run `.toggle` when you want to switch between user and
+The you can run `.toggle()` when you want to switch between user and
 teaching mode.
 
 ## Installation
 
 This package is under development and very experimental but can be
-installed from github using
+installed from github using - **not recommended at this stage**
 
 ``` r
 remotes::install_github("murraycadzow/rstudioTeachMode")
