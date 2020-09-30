@@ -72,10 +72,11 @@
 <!-- badges: start -->
 
 <p>The goal of rstudioTeachMode is to provide an easy mechanism to switch between theme preferences for personal use and theme preferences for a teaching environment.</p>
+<p><strong>This is extremely experimental</strong></p>
 <div id="no-installation-option" class="section level2">
 <h2 class="hasAnchor">
 <a href="#no-installation-option" class="anchor"></a>No installation option:</h2>
-<p>Insert the following into your .Rprofile</p>
+<p>Insert the following into your <code>.Rprofile</code> which can be opened (if you have <code>{usethis}</code> installed) by using <code>usethis::edit_r_profile()</code></p>
 <div class="sourceCode" id="cb1"><pre class="downlit">
 <span class="va">.toggle</span> <span class="op">&lt;-</span> <span class="kw">function</span><span class="op">(</span><span class="op">)</span><span class="op">{</span>
   <span class="co"># Assumes you are in user mode if first time running in session</span>
@@ -98,12 +99,12 @@
   <span class="va">rstudioTeachMode_options</span><span class="op">$</span><span class="va">mode</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/ifelse.html">ifelse</a></span><span class="op">(</span><span class="va">rstudioTeachMode_options</span><span class="op">$</span><span class="va">mode</span> <span class="op">==</span> <span class="st">"teach"</span>, <span class="st">"user"</span>, <span class="st">"teach"</span><span class="op">)</span>
   <span class="fu"><a href="https://rdrr.io/r/base/options.html">options</a></span><span class="op">(</span>rstudioTeachMode <span class="op">=</span> <span class="va">rstudioTeachMode_options</span><span class="op">)</span>
 <span class="op">}</span></pre></div>
-<p>The you can run <code>.toggle</code> when you want to switch between user and teaching mode.</p>
+<p>Then you can run <code>.toggle()</code> when you want to switch between user and teaching mode.</p>
 </div>
 <div id="installation" class="section level2">
 <h2 class="hasAnchor">
 <a href="#installation" class="anchor"></a>Installation</h2>
-<p>This package is under development and very experimental but can be installed from github using</p>
+<p>This package is under development and very experimental but can be installed from github using - <strong>not recommended at this stage</strong></p>
 <div class="sourceCode" id="cb2"><pre class="downlit">
 <span class="fu">remotes</span><span class="fu">::</span><span class="fu"><a href="https://remotes.r-lib.org/reference/install_github.html">install_github</a></span><span class="op">(</span><span class="st">"murraycadzow/rstudioTeachMode"</span><span class="op">)</span></pre></div>
 </div>
