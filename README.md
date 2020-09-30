@@ -22,7 +22,8 @@ teaching environment.
 
 ## No installation option:
 
-Insert the following into your .Rprofile
+Insert the following into your `.Rprofile` which can be opened (if you
+have `{usethis}` installed) by using `usethis::edit_r_profile()`
 
 ``` r
 .toggle <- function(){
@@ -48,7 +49,7 @@ Insert the following into your .Rprofile
 }
 ```
 
-The you can run `.toggle()` when you want to switch between user and
+Then you can run `.toggle()` when you want to switch between user and
 teaching mode.
 
 ## Installation
