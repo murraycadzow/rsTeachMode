@@ -78,6 +78,9 @@
 <a href="#no-installation-option" class="anchor"></a>No installation option:</h2>
 <p>Insert the following into your <code>.Rprofile</code> which can be opened (if you have <code>{usethis}</code> installed) by using <code>usethis::edit_r_profile()</code></p>
 <div class="sourceCode" id="cb1"><pre class="downlit">
+<span class="co"># Toggle between user rstudio preferences and teaching preferences</span>
+<span class="co"># Changes theme and font sizes</span>
+<span class="co"># Requires {rstudioapi} to be installed</span>
 <span class="va">.toggle</span> <span class="op">&lt;-</span> <span class="kw">function</span><span class="op">(</span><span class="op">)</span><span class="op">{</span>
   <span class="co"># Assumes you are in user mode if first time running in session</span>
   <span class="va">rstudioTeachMode_options</span> <span class="op">&lt;-</span>  <span class="fu"><a href="https://rdrr.io/r/base/options.html">getOption</a></span><span class="op">(</span><span class="st">"rstudioTeachMode"</span><span class="op">)</span>
