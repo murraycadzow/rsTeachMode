@@ -18,11 +18,44 @@ knitr::opts_chunk$set(
 <!-- badges: start -->
 [![Lifecycle: experimental](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](https://www.tidyverse.org/lifecycle/#experimental)
 [![CRAN status](https://www.r-pkg.org/badges/version/rstudioTeachMode)](https://CRAN.R-project.org/package=rstudioTeachMode)
-[![Codecov test coverage](https://codecov.io/gh/murraycadzow/rstudioTeachMode/branch/master/graph/badge.svg)](https://codecov.io/gh/murraycadzow/rstudioTeachMode?branch=master)
+<!--[![Codecov test coverage](https://codecov.io/gh/murraycadzow/rstudioTeachMode/branch/master/graph/badge.svg)](https://codecov.io/gh/murraycadzow/rstudioTeachMode?branch=master) -->
 [![R build status](https://github.com/murraycadzow/rstudioTeachMode/workflows/R-CMD-check/badge.svg)](https://github.com/murraycadzow/rstudioTeachMode/actions)
 <!-- badges: end -->
 
 The goal of rstudioTeachMode is to provide an easy mechanism to switch between theme preferences for personal use and theme preferences for a teaching environment.
+
+
+## No installation option:
+
+Insert the following into your .Rprofile
+
+```{r}
+.toggle <- function(){
+  # Assumes you are in user mode if first time running in session
+  rstudioTeachMode_options <-  getOption("rstudioTeachMode")
+  if (is.null(rstudioTeachMode_options)) rstudioTeachMode_options <- list(mode = "user")
+  
+
+    # teach -> user
+  if (rstudioTeachMode_options$mode == "teach") {
+    # select what you want your user settings to be here
+    rstudioapi::writeRStudioPreference("font_size_points", 12L) # number has to be integer
+    rstudioapi::applyTheme("Solarized Light")
+  } else {# user -> teach
+    # select what you want your teaching settings to be
+    rstudioapi::writeRStudioPreference("font_size_points", 24L) # number has to be integer
+    rstudioapi::applyTheme("Chrome")
+  }
+  
+  # flip the mode in the stored options
+  rstudioTeachMode_options$mode <- ifelse(rstudioTeachMode_options$mode == "teach", "user", "teach")
+  options(rstudioTeachMode = rstudioTeachMode_options)
+}
+```
+
+
+
+The you can run `.toggle` when you want to switch between user and teaching mode.
 
 ## Installation
 

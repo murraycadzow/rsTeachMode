@@ -1,0 +1,14 @@
+Name: Toggle Teach Mode
+Description: Switch between personal and teaching preferences
+Binding: toggle_teachmode
+Interactive: false
+
+Name: Change Font Size
+Description: Switch between personal and teaching preferences
+Binding: change_font_size_addin
+Interactive: true
+
+Name: Increment font size
+Description: Increment current font pt size by 2
+Binding: increment_font_size
+Interactive: false

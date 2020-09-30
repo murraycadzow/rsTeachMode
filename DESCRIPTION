@@ -21,4 +21,6 @@ RoxygenNote: 7.1.1
 URL: https://github.com/murraycadzow/rstudioTeachMode
 BugReports: https://github.com/murraycadzow/rstudioTeachMode/issues
 Imports: 
-    rstudioapi
+    rstudioapi (>= 0.5),
+    shiny (>= 0.13),
+    miniUI (>= 0.0.1)
