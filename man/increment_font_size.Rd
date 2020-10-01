@@ -2,7 +2,7 @@
 % Please edit documentation in R/fonts.R
 \name{increment_font_size}
 \alias{increment_font_size}
-\title{Title}
+\title{Increment current font size}
 \usage{
 increment_font_size()
 }
@@ -10,8 +10,10 @@ increment_font_size()
 
 }
 \description{
-Title
+Increment current font size
 }
 \examples{
-change_font_size(12)
+\donttest{
+increment_font_size()
+}
 }

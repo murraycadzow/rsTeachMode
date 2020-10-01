@@ -1,6 +1,6 @@
 Name: Toggle Teach Mode
 Description: Switch between personal and teaching preferences
-Binding: toggle_teachmode
+Binding: toggle_teach_mode
 Interactive: false
 
 Name: Change Font Size

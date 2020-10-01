@@ -2,19 +2,21 @@
 % Please edit documentation in R/fonts.R
 \name{change_font_size}
 \alias{change_font_size}
-\title{Title}
+\title{Change the editor font size}
 \usage{
 change_font_size(pt)
 }
 \arguments{
-\item{pt}{}
+\item{pt}{The font size (number) in points to change to.}
 }
 \value{
 
 }
 \description{
-Title
+Change the font of the editor to be specific size.
 }
 \examples{
+\donttest{
 change_font_size(12)
+}
 }

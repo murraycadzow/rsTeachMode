@@ -16,21 +16,18 @@ knitr::opts_chunk$set(
 # rstudioTeachMode
 
 <!-- badges: start -->
-[![Lifecycle: experimental](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](https://www.tidyverse.org/lifecycle/#experimental)
-[![CRAN status](https://www.r-pkg.org/badges/version/rstudioTeachMode)](https://CRAN.R-project.org/package=rstudioTeachMode)
-<!--[![Codecov test coverage](https://codecov.io/gh/murraycadzow/rstudioTeachMode/branch/master/graph/badge.svg)](https://codecov.io/gh/murraycadzow/rstudioTeachMode?branch=master) -->
-[![R build status](https://github.com/murraycadzow/rstudioTeachMode/workflows/R-CMD-check/badge.svg)](https://github.com/murraycadzow/rstudioTeachMode/actions)
+
+[![Lifecycle: experimental](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](https://www.tidyverse.org/lifecycle/#experimental) [![CRAN status](https://www.r-pkg.org/badges/version/rstudioTeachMode)](https://CRAN.R-project.org/package=rstudioTeachMode) <!--[![Codecov test coverage](https://codecov.io/gh/murraycadzow/rstudioTeachMode/branch/master/graph/badge.svg)](https://codecov.io/gh/murraycadzow/rstudioTeachMode?branch=master) --> [![R build status](https://github.com/murraycadzow/rstudioTeachMode/workflows/R-CMD-check/badge.svg)](https://github.com/murraycadzow/rstudioTeachMode/actions)
+
 <!-- badges: end -->
 
 The goal of rstudioTeachMode is to provide an easy mechanism to switch between theme preferences for personal use and theme preferences for a teaching environment.
-
 
 **This is extremely experimental**
 
 ## No installation option:
 
 Insert the following into your `.Rprofile` which can be opened (if you have `{usethis}` installed) by using `usethis::edit_r_profile()`
-
 
 ```{r}
 # Toggle between user rstudio preferences and teaching preferences
@@ -58,8 +55,6 @@ Insert the following into your `.Rprofile` which can be opened (if you have `{us
 }
 ```
 
-
-
 Then you can run `.toggle()` when you want to switch between user and teaching mode.
 
 ## Installation
@@ -78,4 +73,3 @@ This is a basic example which shows you how to solve a common problem:
 library(rstudioTeachMode)
 ## basic example code
 ```
-

@@ -1,11 +1,16 @@
-#' Title
+#' Change the editor font size
 #'
-#' @param pt
+#' Change the font of the editor to be specific size.
+#'
+#' @param pt The font size (number) in points to change to.
 #'
 #' @return
 #' @export
 #'
-#' @examples change_font_size(12)
+#' @examples
+#' \donttest{
+#' change_font_size(12)
+#' }
 change_font_size <- function(pt){
   if (!is.numeric(pt)) {
     stop("`pt` must be numeric (or integer).",call. = FALSE)
@@ -15,6 +20,16 @@ change_font_size <- function(pt){
 }
 
 
+#' Change font size addin
+#'
+#' An RStudio addin that opens a selector window to choose the font size for the editor.
+#' @return
+#' @export
+#'
+#' @examples
+#' \donttest{
+#' change_font_size_addin()
+#' }
 change_font_size_addin <- function(){
   ui <- miniUI::miniPage(
     miniUI::gadgetTitleBar("Select font size"),
@@ -49,16 +64,31 @@ change_font_size_addin <- function(){
 
 }
 
-#' Title
-#'
-#'
+#' Increment current font size
 #'
 #' @return
 #' @export
 #'
-#' @examples change_font_size(12)
+#' @examples
+#' \donttest{
+#' increment_font_size()
+#' }
 increment_font_size <- function(){
   current_font_size <- rstudioapi::readRStudioPreference("font_size_points", FALSE)
   rstudioapi::writeRStudioPreference("font_size_points", as.integer(current_font_size + 2))
 }
 
+
+#' Decrement current font size
+#'
+#' @return
+#' @export
+#'
+#' @examples
+#' \donttest{
+#' decrement_font_size()
+#' }
+decrement_font_size <- function(){
+  current_font_size <- rstudioapi::readRStudioPreference("font_size_points", FALSE)
+  rstudioapi::writeRStudioPreference("font_size_points", as.integer(current_font_size - 2))
+}
