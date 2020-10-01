@@ -4,7 +4,7 @@
 #' @export
 #'
 #' @examples
-#' \donttest{
+#' \dontrun{
 #' toggle_teach_mode()
 #' }
 toggle_teach_mode <- function(){

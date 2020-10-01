@@ -16,7 +16,7 @@ change_font_size(pt)
 Change the font of the editor to be specific size.
 }
 \examples{
-\donttest{
-change_font_size(12)
+\dontrun{
+#change_font_size(12)
 }
 }

@@ -13,7 +13,7 @@ toggle_teach_mode()
 Toggle between user preferences and teaching preferences
 }
 \examples{
-\donttest{
+\dontrun{
 toggle_teach_mode()
 }
 }

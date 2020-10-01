@@ -8,8 +8,8 @@
 #' @export
 #'
 #' @examples
-#' \donttest{
-#' change_font_size(12)
+#' \dontrun{
+#' #change_font_size(12)
 #' }
 change_font_size <- function(pt){
   if (!is.numeric(pt)) {
@@ -27,7 +27,7 @@ change_font_size <- function(pt){
 #' @export
 #'
 #' @examples
-#' \donttest{
+#' \dontrun{
 #' change_font_size_addin()
 #' }
 change_font_size_addin <- function(){
@@ -70,7 +70,7 @@ change_font_size_addin <- function(){
 #' @export
 #'
 #' @examples
-#' \donttest{
+#' \dontrun{
 #' increment_font_size()
 #' }
 increment_font_size <- function(){
@@ -85,7 +85,7 @@ increment_font_size <- function(){
 #' @export
 #'
 #' @examples
-#' \donttest{
+#' \dontrun{
 #' decrement_font_size()
 #' }
 decrement_font_size <- function(){

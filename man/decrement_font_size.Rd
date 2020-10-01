@@ -13,7 +13,7 @@ decrement_font_size()
 Decrement current font size
 }
 \examples{
-\donttest{
+\dontrun{
 decrement_font_size()
 }
 }

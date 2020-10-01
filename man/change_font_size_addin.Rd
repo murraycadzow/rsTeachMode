@@ -13,7 +13,7 @@ change_font_size_addin()
 An RStudio addin that opens a selector window to choose the font size for the editor.
 }
 \examples{
-\donttest{
+\dontrun{
 change_font_size_addin()
 }
 }

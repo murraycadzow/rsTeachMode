@@ -13,7 +13,7 @@ increment_font_size()
 Increment current font size
 }
 \examples{
-\donttest{
+\dontrun{
 increment_font_size()
 }
 }
