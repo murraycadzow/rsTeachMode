@@ -4,7 +4,10 @@
 \alias{increment_font_size}
 \title{Increment current font size}
 \usage{
-increment_font_size()
+increment_font_size(change = 2)
+}
+\arguments{
+\item{change}{Number of points (positive number) to increase the current font size by.}
 }
 \value{
 

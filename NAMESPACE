@@ -3,5 +3,7 @@
 export(change_font_size)
 export(change_font_size_addin)
 export(decrement_font_size)
+export(get_current_editor_theme)
 export(increment_font_size)
+export(set_teach_mode_settings)
 export(toggle_teach_mode)

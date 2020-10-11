@@ -4,7 +4,10 @@
 \alias{decrement_font_size}
 \title{Decrement current font size}
 \usage{
-decrement_font_size()
+decrement_font_size(change = 2)
+}
+\arguments{
+\item{change}{Number of points (positive number) to decrease the current font size by.}
 }
 \value{
 
@@ -15,5 +18,8 @@ Decrement current font size
 \examples{
 \dontrun{
 decrement_font_size()
+
+# decrease current font size by 6
+decrement_font_size(change = 6)
 }
 }

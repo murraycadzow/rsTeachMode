@@ -3,12 +3,12 @@ Description: Switch between personal and teaching preferences
 Binding: toggle_teach_mode
 Interactive: false
 
-Name: Change Font Size
-Description: Switch between personal and teaching preferences
+Name: Decrease editor font size
+Description: Decrease current font size by 2 pts
 Binding: change_font_size_addin
-Interactive: true
+Interactive: false
 
-Name: Increment font size
-Description: Increment current font pt size by 2
+Name: Increase editor font size
+Description: Increase current font size by 2 pts
 Binding: increment_font_size
 Interactive: false

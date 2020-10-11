@@ -7,7 +7,7 @@
 change_font_size(pt)
 }
 \arguments{
-\item{pt}{The font size (number) in points to change to.}
+\item{pt}{The font size (number) in points to change to in the editor.}
 }
 \value{
 
@@ -17,6 +17,6 @@ Change the font of the editor to be specific size.
 }
 \examples{
 \dontrun{
-#change_font_size(12)
+change_font_size(12)
 }
 }

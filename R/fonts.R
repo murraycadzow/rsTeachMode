@@ -2,14 +2,14 @@
 #'
 #' Change the font of the editor to be specific size.
 #'
-#' @param pt The font size (number) in points to change to.
+#' @param pt The font size (number) in points to change to in the editor.
 #'
 #' @return
 #' @export
 #'
 #' @examples
 #' \dontrun{
-#' #change_font_size(12)
+#' change_font_size(12)
 #' }
 change_font_size <- function(pt){
   if (!is.numeric(pt)) {
@@ -66,6 +66,8 @@ change_font_size_addin <- function(){
 
 #' Increment current font size
 #'
+#' @param change Number of points (positive number) to increase the current font size by.
+#'
 #' @return
 #' @export
 #'
@@ -73,13 +75,15 @@ change_font_size_addin <- function(){
 #' \dontrun{
 #' increment_font_size()
 #' }
-increment_font_size <- function(){
+increment_font_size <- function(change = 2){
   current_font_size <- rstudioapi::readRStudioPreference("font_size_points", FALSE)
-  rstudioapi::writeRStudioPreference("font_size_points", as.integer(current_font_size + 2))
+  rstudioapi::writeRStudioPreference("font_size_points", as.integer(current_font_size + change))
 }
 
 
 #' Decrement current font size
+#'
+#' @param change Number of points (positive number) to decrease the current font size by.
 #'
 #' @return
 #' @export
@@ -87,8 +91,16 @@ increment_font_size <- function(){
 #' @examples
 #' \dontrun{
 #' decrement_font_size()
+#'
+#' # decrease current font size by 6
+#' decrement_font_size(change = 6)
 #' }
-decrement_font_size <- function(){
+decrement_font_size <- function(change = 2){
   current_font_size <- rstudioapi::readRStudioPreference("font_size_points", FALSE)
-  rstudioapi::writeRStudioPreference("font_size_points", as.integer(current_font_size - 2))
+  rstudioapi::writeRStudioPreference("font_size_points", as.integer(current_font_size - change))
+}
+
+
+get_current_font_size <- function(){
+  rstudioapi::readRStudioPreference("font_size_points", FALSE)
 }
