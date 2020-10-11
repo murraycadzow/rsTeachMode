@@ -2,7 +2,7 @@
 % Please edit documentation in R/teachmode.R
 \name{set_teach_mode_settings}
 \alias{set_teach_mode_settings}
-\title{Set the options for rstudioTeachMode}
+\title{Set the options for rsTeachMode}
 \usage{
 set_teach_mode_settings(
   current_mode = "user",
@@ -27,10 +27,10 @@ set_teach_mode_settings(
 \item{quiet}{When FALSE prints the code to be added to your Rprofile to make settings persist between sessions.}
 }
 \value{
-List object of the rstudioTeachMode options
+List object of the rsTeachMode options
 }
 \description{
-Set the options for rstudioTeachMode
+Set the options for rsTeachMode
 }
 \examples{
 \dontrun{

@@ -1,4 +1,4 @@
-Package: rstudioTeachMode
+Package: rsTeachMode
 Title: Switch Between Personal and Teaching Display Preferences
 Version: 0.0.1
 Authors@R: 
@@ -9,7 +9,7 @@ Authors@R:
            comment = c(ORCID = "0000-0002-2299-4136"))
 Author: Murray Cadzow
 Maintainer: Murray Cadzow <murray.cadzow@otago.ac.nz>
-Description: This package enables the easy switching between your personal theme preferences and theme preferences suited for teaching.
+Description: This package enables the easy switching between your personal theme preferences and theme preferences suited for teaching in RStudio.
 License: MIT + file LICENSE
 Suggests: 
     testthat,
@@ -18,8 +18,8 @@ Encoding: UTF-8
 LazyData: true
 Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.1.1
-URL: https://github.com/murraycadzow/rstudioTeachMode
-BugReports: https://github.com/murraycadzow/rstudioTeachMode/issues
+URL: https://github.com/murraycadzow/rsTeachMode
+BugReports: https://github.com/murraycadzow/rsTeachMode/issues
 Imports: 
     rstudioapi (>= 0.5),
     shiny (>= 0.13),
