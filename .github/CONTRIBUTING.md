@@ -1,6 +1,6 @@
-# Contributing to rstudioTeachMode
+# Contributing to rsTeachMode
 
-This outlines how to propose a change to rstudioTeachMode. 
+This outlines how to propose a change to rsTeachMode. 
 For more detailed info about contributing to this, and other tidyverse packages, please see the
 [**development contributing guide**](https://rstd.io/tidy-contrib). 
 
@@ -42,6 +42,6 @@ If you’ve found a bug, please file an issue that illustrates the bug with a mi
 
 ## Code of Conduct
 
-Please note that the rstudioTeachMode project is released with a
+Please note that the rsTeachMode project is released with a
 [Contributor Code of Conduct](CODE_OF_CONDUCT.md). By contributing to this
 project you agree to abide by its terms.

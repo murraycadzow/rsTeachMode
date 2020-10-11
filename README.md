@@ -9,7 +9,7 @@
 experimental](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](https://www.tidyverse.org/lifecycle/#experimental)
 [![CRAN
 status](https://www.r-pkg.org/badges/version/rsTeachMode)](https://CRAN.R-project.org/package=rsTeachMode)
-<!--[![Codecov test coverage](https://codecov.io/gh/murraycadzow/rsTeachMode/branch/master/graph/badge.svg)](https://codecov.io/gh/murraycadzow/rsTeachMode?branch=master) -->
+<!--[![Codecov test coverage](https://codecov.io/gh/murraycadzow/rsTeachMode/branch/main/graph/badge.svg)](https://codecov.io/gh/murraycadzow/rsTeachMode?branch=main) -->
 [![R build
 status](https://github.com/murraycadzow/rsTeachMode/workflows/R-CMD-check/badge.svg)](https://github.com/murraycadzow/rsTeachMode/actions)
 
@@ -30,7 +30,7 @@ have `{usethis}` installed) by using `usethis::edit_r_profile()`
 # Requires {rstudioapi} to be installed
 .toggle <- function(){
   # Assumes you are in user mode if first time running in session
-  rsTeachMode_options <-  getOption("rstudioTeachMode")
+  rsTeachMode_options <-  getOption("rsTeachMode")
   if (is.null(rsTeachMode_options)) rsTeachMode_options <- list(mode = "user")
   
   # teach -> user

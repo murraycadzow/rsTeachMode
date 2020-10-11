@@ -17,7 +17,7 @@ knitr::opts_chunk$set(
 
 <!-- badges: start -->
 
-[![Lifecycle: experimental](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](https://www.tidyverse.org/lifecycle/#experimental) [![CRAN status](https://www.r-pkg.org/badges/version/rsTeachMode)](https://CRAN.R-project.org/package=rsTeachMode) <!--[![Codecov test coverage](https://codecov.io/gh/murraycadzow/rsTeachMode/branch/master/graph/badge.svg)](https://codecov.io/gh/murraycadzow/rsTeachMode?branch=master) --> [![R build status](https://github.com/murraycadzow/rsTeachMode/workflows/R-CMD-check/badge.svg)](https://github.com/murraycadzow/rsTeachMode/actions)
+[![Lifecycle: experimental](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](https://www.tidyverse.org/lifecycle/#experimental) [![CRAN status](https://www.r-pkg.org/badges/version/rsTeachMode)](https://CRAN.R-project.org/package=rsTeachMode) <!--[![Codecov test coverage](https://codecov.io/gh/murraycadzow/rsTeachMode/branch/main/graph/badge.svg)](https://codecov.io/gh/murraycadzow/rsTeachMode?branch=main) --> [![R build status](https://github.com/murraycadzow/rsTeachMode/workflows/R-CMD-check/badge.svg)](https://github.com/murraycadzow/rsTeachMode/actions)
 
 <!-- badges: end -->
 
@@ -34,7 +34,7 @@ Insert the following into your `.Rprofile` which can be opened (if you have `{us
 # Requires {rstudioapi} to be installed
 .toggle <- function(){
   # Assumes you are in user mode if first time running in session
-  rsTeachMode_options <-  getOption("rstudioTeachMode")
+  rsTeachMode_options <-  getOption("rsTeachMode")
   if (is.null(rsTeachMode_options)) rsTeachMode_options <- list(mode = "user")
   
   # teach -> user
