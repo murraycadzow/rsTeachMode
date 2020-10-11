@@ -53,6 +53,23 @@ toggle_teach_mode <- function(){
 #' set_teach_mode_settings()
 #' }
 set_teach_mode_settings <- function(current_mode = "user", user_theme_name = get_current_editor_theme(), user_font_size = get_current_font_size(), teach_theme_name = "Chrome", teach_font_size = 24, quiet = TRUE) {
+  if(!current_mode %in% c("user", "teach")){
+    stop("`current_mode` must be either 'user' or 'teach'.")
+  }
+  if(!user_theme_name %in% vapply(rstudioapi::getThemes(), `[[`, "name", FUN.VALUE =character(1))){
+    stop(paste0("Specified `user_theme_name` of '", user_theme_name, "' is not an installed theme."), call. = FALSE)
+  }
+  if(!teach_theme_name %in% vapply(rstudioapi::getThemes(), `[[`, "name", FUN.VALUE =character(1))){
+    stop(paste0("Specified `teach_theme_name` of '", teach_theme_name, "' is not an installed theme."), call. = FALSE)
+  }
+  if(!is.numeric(user_font_size)){
+    stop("Specified `user_font_size` must be of type 'numeric'.", call. = FALSE)
+  }
+  if(!is.numeric(teach_font_size)){
+    stop("Specified `teach_font_size` must be of type 'numeric'.", call. = FALSE)
+  }
+
+
   rstudioTeachMode_options = list(
     mode = current_mode,
     user_theme_name = user_theme_name,
