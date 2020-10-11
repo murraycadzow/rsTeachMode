@@ -53,7 +53,6 @@ toggle_teach_mode <- function(){
 #' set_teach_mode_settings()
 #' }
 set_teach_mode_settings <- function(current_mode = "user", user_theme_name = get_current_editor_theme(), user_font_size = get_current_font_size(), teach_theme_name = "Chrome", teach_font_size = 24, quiet = TRUE) {
-
   rstudioTeachMode_options = list(
     mode = current_mode,
     user_theme_name = user_theme_name,
@@ -65,8 +64,8 @@ set_teach_mode_settings <- function(current_mode = "user", user_theme_name = get
   options(rstudioTeachMode = rstudioTeachMode_options)
 
   if(!quiet){
-    print("To keep your settings between sessions, add the following line to you Rprofile (`usethis::edit_r_profile()`)")
-    print(paste0("options(rstudioTeachMode = list(mode = ", "'",rstudioTeachMode_options$mode,"', user_theme_name = '",  rstudioTeachMode_options$user_theme_name,"'", ", user_font_size = ",user_font_size, ", teach_theme_name = '", rstudioTeachMode_options$teach_theme_name, "', teach_font_size = ", rstudioTeachMode_options$teach_font_size, "))"
+    message("To keep your settings between sessions, add the following line to you Rprofile (`usethis::edit_r_profile()`)")
+    message(paste0("options(rstudioTeachMode = list(mode = ", "'",rstudioTeachMode_options$mode,"', user_theme_name = '",  rstudioTeachMode_options$user_theme_name,"'", ", user_font_size = ",user_font_size, ", teach_theme_name = '", rstudioTeachMode_options$teach_theme_name, "', teach_font_size = ", rstudioTeachMode_options$teach_font_size, "))"
                 ), quote = FALSE)
   }
   invisible(rstudioTeachMode_options)
