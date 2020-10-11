@@ -1,22 +1,23 @@
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
-# rstudioTeachMode
+# rsTeachMode
 
 <!-- badges: start -->
 
 [![Lifecycle:
 experimental](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](https://www.tidyverse.org/lifecycle/#experimental)
 [![CRAN
-status](https://www.r-pkg.org/badges/version/rstudioTeachMode)](https://CRAN.R-project.org/package=rstudioTeachMode)
-<!--[![Codecov test coverage](https://codecov.io/gh/murraycadzow/rstudioTeachMode/branch/master/graph/badge.svg)](https://codecov.io/gh/murraycadzow/rstudioTeachMode?branch=master) -->
+status](https://www.r-pkg.org/badges/version/rsTeachMode)](https://CRAN.R-project.org/package=rsTeachMode)
+<!--[![Codecov test coverage](https://codecov.io/gh/murraycadzow/rsTeachMode/branch/master/graph/badge.svg)](https://codecov.io/gh/murraycadzow/rsTeachMode?branch=master) -->
 [![R build
-status](https://github.com/murraycadzow/rstudioTeachMode/workflows/R-CMD-check/badge.svg)](https://github.com/murraycadzow/rstudioTeachMode/actions)
+status](https://github.com/murraycadzow/rsTeachMode/workflows/R-CMD-check/badge.svg)](https://github.com/murraycadzow/rsTeachMode/actions)
+
 <!-- badges: end -->
 
-The goal of rstudioTeachMode is to provide an easy mechanism to switch
+The goal of rsTeachMode is to provide an easy mechanism to switch
 between theme preferences for personal use and theme preferences for a
-teaching environment.
+teaching environment in RStudio.
 
 **This is extremely experimental**
 
@@ -31,11 +32,11 @@ have `{usethis}` installed) by using `usethis::edit_r_profile()`
 # Requires {rstudioapi} to be installed
 .toggle <- function(){
   # Assumes you are in user mode if first time running in session
-  rstudioTeachMode_options <-  getOption("rstudioTeachMode")
-  if (is.null(rstudioTeachMode_options)) rstudioTeachMode_options <- list(mode = "user")
+  rsTeachMode_options <-  getOption("rstudioTeachMode")
+  if (is.null(rsTeachMode_options)) rsTeachMode_options <- list(mode = "user")
   
   # teach -> user
-  if (rstudioTeachMode_options$mode == "teach") {
+  if (rsTeachMode_options$mode == "teach") {
     # select what you want your user settings to be here
     rstudioapi::writeRStudioPreference("font_size_points", 12L) # number has to be integer
     rstudioapi::applyTheme("Solarized Light") # insert name of theme for user here
@@ -46,8 +47,8 @@ have `{usethis}` installed) by using `usethis::edit_r_profile()`
   }
   
   # flip the mode in the stored options
-  rstudioTeachMode_options$mode <- ifelse(rstudioTeachMode_options$mode == "teach", "user", "teach")
-  options(rstudioTeachMode = rstudioTeachMode_options)
+  rsTeachMode_options$mode <- ifelse(rsTeachMode_options$mode == "teach", "user", "teach")
+  options(rsTeachMode = rsTeachMode_options)
 }
 ```
 
@@ -57,17 +58,27 @@ teaching mode.
 ## Installation
 
 This package is under development and very experimental but can be
-installed from github using - **not recommended at this stage**
+installed from github using:
 
 ``` r
-remotes::install_github("murraycadzow/rstudioTeachMode")
+remotes::install_github("murraycadzow/rsTeachMode")
 ```
 
-## Example
+## Inital setup
 
-This is a basic example which shows you how to solve a common problem:
+This will use your current theme and editor font settings as the ‘user’
+options and set your teaching settings to the “Chrome” theme with a font
+size of 24. The use of `quite = FALSE` prints out the code to add to
+your .Rprofile that is needed to maintain these settings between
+sessions.
 
 ``` r
-library(rstudioTeachMode)
-## basic example code
+library(rsTeachMode)
+
+set_teach_mode_settings(teach_theme_name = "Chrome", teach_font_size = 24, quiet = FALSE)
 ```
+
+## RStudio Addins
+
+There are addins as part of this package that make it easy to create
+keyboard shortcuts for the common features.
