@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Decrement current font size — decrement_font_size • rstudioTeachMode</title>
+<title>Set the options for rstudioTeachMode — set_teach_mode_settings • rstudioTeachMode</title>
 
 
 <!-- jquery -->
@@ -39,8 +39,8 @@
 
 
 
-<meta property="og:title" content="Decrement current font size — decrement_font_size" />
-<meta property="og:description" content="Decrement current font size" />
+<meta property="og:title" content="Set the options for rstudioTeachMode — set_teach_mode_settings" />
+<meta property="og:description" content="Set the options for rstudioTeachMode" />
 
 
 
@@ -108,38 +108,61 @@
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Decrement current font size</h1>
-    <small class="dont-index">Source: <a href='https://github.com/murraycadzow/rstudioTeachMode/blob/master/R/fonts.R'><code>R/fonts.R</code></a></small>
-    <div class="hidden name"><code>decrement_font_size.Rd</code></div>
+    <h1>Set the options for rstudioTeachMode</h1>
+    <small class="dont-index">Source: <a href='https://github.com/murraycadzow/rstudioTeachMode/blob/master/R/teachmode.R'><code>R/teachmode.R</code></a></small>
+    <div class="hidden name"><code>set_teach_mode_settings.Rd</code></div>
     </div>
 
     <div class="ref-description">
-    <p>Decrement current font size</p>
+    <p>Set the options for rstudioTeachMode</p>
     </div>
 
-    <pre class="usage"><span class='fu'>decrement_font_size</span><span class='op'>(</span>change <span class='op'>=</span> <span class='fl'>2</span><span class='op'>)</span></pre>
+    <pre class="usage"><span class='fu'>set_teach_mode_settings</span><span class='op'>(</span>
+  current_mode <span class='op'>=</span> <span class='st'>"user"</span>,
+  user_theme_name <span class='op'>=</span> <span class='fu'><a href='get_current_editor_theme.html'>get_current_editor_theme</a></span><span class='op'>(</span><span class='op'>)</span>,
+  user_font_size <span class='op'>=</span> <span class='fu'>get_current_font_size</span><span class='op'>(</span><span class='op'>)</span>,
+  teach_theme_name <span class='op'>=</span> <span class='st'>"Chrome"</span>,
+  teach_font_size <span class='op'>=</span> <span class='fl'>24</span>,
+  quiet <span class='op'>=</span> <span class='cn'>TRUE</span>
+<span class='op'>)</span></pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
-      <th>change</th>
-      <td><p>Number of points (positive number) to decrease the current font size by.</p></td>
+      <th>current_mode</th>
+      <td><p>Either "user" or "teach".</p></td>
+    </tr>
+    <tr>
+      <th>user_theme_name</th>
+      <td><p>Name of the theme to be used in "user" mode.</p></td>
+    </tr>
+    <tr>
+      <th>user_font_size</th>
+      <td><p>Font size to be used in "user" mode.</p></td>
+    </tr>
+    <tr>
+      <th>teach_theme_name</th>
+      <td><p>Name of the theme to be used in "teach" mode.</p></td>
+    </tr>
+    <tr>
+      <th>teach_font_size</th>
+      <td><p>Font size to be used in "teach" mode.</p></td>
+    </tr>
+    <tr>
+      <th>quiet</th>
+      <td><p>When FALSE prints the code to be added to your Rprofile to make settings persist between sessions.</p></td>
     </tr>
     </table>
 
     <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
-    
-
-
+    <p>List object of the rstudioTeachMode options</p>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
     <pre class="examples"><div class='input'><span class='kw'>if</span> <span class='op'>(</span><span class='cn'>FALSE</span><span class='op'>)</span> <span class='op'>{</span>
-<span class='fu'>decrement_font_size</span><span class='op'>(</span><span class='op'>)</span>
-
-<span class='co'># decrease current font size by 6</span>
-<span class='fu'>decrement_font_size</span><span class='op'>(</span>change <span class='op'>=</span> <span class='fl'>6</span><span class='op'>)</span>
+<span class='co'># Use current settings as the "user" mode and use the defaults for "teach" mode.</span>
+<span class='fu'>set_teach_mode_settings</span><span class='op'>(</span><span class='op'>)</span>
 <span class='op'>}</span>
 </div></pre>
   </div>
