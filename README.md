@@ -75,10 +75,19 @@ sessions.
 ``` r
 library(rsTeachMode)
 
+# keeps your current settings as your 'user' settings
 set_teach_mode_settings(teach_theme_name = "Chrome", teach_font_size = 24, quiet = FALSE)
+
+
+# Specify all settings
+set_teach_mode_settings(current_mode = "user",user_theme_name = "Solarized Light", user_font_size = 12, teach_theme_name = "Chrome", teach_font_size = 24, quiet = FALSE)
 ```
 
 ## RStudio Addins
 
 There are addins as part of this package that make it easy to create
 keyboard shortcuts for the common features.
+
+To set a keyboard shortcut, in the Rstudio menu go `Tools -> Modify
+Keyboard Shortcuts` and then filter for “Toggle Teach Mode” or one of
+the names of the other addins.

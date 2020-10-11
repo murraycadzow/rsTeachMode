@@ -1,4 +1,4 @@
 library(testthat)
-library(rstudioTeachMode)
+library(rsTeachMode)
 
-test_check("rstudioTeachMode")
+test_check("rsTeachMode")
