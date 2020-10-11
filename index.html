@@ -118,12 +118,18 @@
 <div class="sourceCode" id="cb3"><pre class="downlit">
 <span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/murraycadzow/rsTeachMode">rsTeachMode</a></span><span class="op">)</span>
 
-<span class="fu"><a href="reference/set_teach_mode_settings.html">set_teach_mode_settings</a></span><span class="op">(</span>teach_theme_name <span class="op">=</span> <span class="st">"Chrome"</span>, teach_font_size <span class="op">=</span> <span class="fl">24</span>, quiet <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span></pre></div>
+<span class="co"># keeps your current settings as your 'user' settings</span>
+<span class="fu"><a href="reference/set_teach_mode_settings.html">set_teach_mode_settings</a></span><span class="op">(</span>teach_theme_name <span class="op">=</span> <span class="st">"Chrome"</span>, teach_font_size <span class="op">=</span> <span class="fl">24</span>, quiet <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span>
+
+
+<span class="co"># Specify all settings</span>
+<span class="fu"><a href="reference/set_teach_mode_settings.html">set_teach_mode_settings</a></span><span class="op">(</span>current_mode <span class="op">=</span> <span class="st">"user"</span>,user_theme_name <span class="op">=</span> <span class="st">"Solarized Light"</span>, user_font_size <span class="op">=</span> <span class="fl">12</span>, teach_theme_name <span class="op">=</span> <span class="st">"Chrome"</span>, teach_font_size <span class="op">=</span> <span class="fl">24</span>, quiet <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span></pre></div>
 </div>
 <div id="rstudio-addins" class="section level2">
 <h2 class="hasAnchor">
 <a href="#rstudio-addins" class="anchor"></a>RStudio Addins</h2>
 <p>There are addins as part of this package that make it easy to create keyboard shortcuts for the common features.</p>
+<p>To set a keyboard shortcut, in the Rstudio menu go <code>Tools -&gt; Modify Keyboard Shortcuts</code> and then filter for “Toggle Teach Mode” or one of the names of the other addins.</p>
 </div>
 </div>
   </div>
