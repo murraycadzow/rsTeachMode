@@ -73,13 +73,22 @@ sessions.
 ``` r
 library(rsTeachMode)
 
-# keeps your current settings as your 'user' settings
+# keeps your current settings as your 'user' settings and sets preferences for 'teaching' use
 set_teach_mode_settings(teach_theme_name = "Chrome", teach_font_size = 24, quiet = FALSE)
 
 
 # Specify all settings
 set_teach_mode_settings(current_mode = "user",user_theme_name = "Solarized Light", user_font_size = 12, teach_theme_name = "Chrome", teach_font_size = 24, quiet = FALSE)
 ```
+
+Once you have created your set your settings toggle between the two
+modes with:
+
+``` r
+toggle_teach_mode()
+```
+
+Or set it to a keyboard shortcut using the addin.
 
 ## RStudio Addins
 
