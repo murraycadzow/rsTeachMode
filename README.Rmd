@@ -23,6 +23,7 @@ knitr::opts_chunk$set(
 
 The goal of rsTeachMode is to provide an easy mechanism to switch between theme preferences for personal use and theme preferences for a teaching environment in RStudio.
 
+**Requires version \>1.3.387 of RStudio**
 
 ## No installation option:
 
@@ -64,7 +65,6 @@ This package is under development and very experimental but can be installed fro
 remotes::install_github("murraycadzow/rsTeachMode@main")
 ```
 
-
 ## Inital setup
 
 This will use your current theme and editor font settings as the 'user' options and set your teaching settings to the "Chrome" theme with a font size of 24. The use of `quite = FALSE` prints out the code to add to your .Rprofile that is needed to maintain these settings between sessions.
@@ -87,9 +87,8 @@ set_teach_mode_settings(current_mode = "user",
                         quiet = FALSE)
 ```
 
-
-
 Once you have created your set your settings toggle between the two modes with:
+
 ```{r, eval = FALSE}
 toggle_teach_mode()
 ```

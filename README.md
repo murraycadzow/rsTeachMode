@@ -19,6 +19,8 @@ The goal of rsTeachMode is to provide an easy mechanism to switch
 between theme preferences for personal use and theme preferences for a
 teaching environment in RStudio.
 
+**Requires version \>1.3.387 of RStudio**
+
 ## No installation option:
 
 Insert the following into your `.Rprofile` which can be opened (if you
