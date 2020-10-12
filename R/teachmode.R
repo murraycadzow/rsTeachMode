@@ -7,10 +7,10 @@
 #' \dontrun{
 #' toggle_teach_mode()
 #' }
-toggle_teach_mode <- function(){
+toggle_teach_mode <- function() {
   # Assumes you are in user mode if first time running in session
-  rsTeachMode_options <-  getOption("rsTeachMode")
-  if (is.null(rsTeachMode_options)){
+  rsTeachMode_options <- getOption("rsTeachMode")
+  if (is.null(rsTeachMode_options)) {
     message("No rsTeachMode options set. Using defaults from `set_teach_mode_settings()`")
     rsTeachMode_options <- set_teach_mode_settings()
   }
@@ -20,7 +20,7 @@ toggle_teach_mode <- function(){
     # select what you want your user settings to be here
     change_font_size(rsTeachMode_options$user_font_size) # number has to be integer
     rstudioapi::applyTheme(rsTeachMode_options$user_theme_name) # insert name of theme for user here
-  } else {# user -> teach
+  } else { # user -> teach
     # select what you want your teaching settings to be
     change_font_size(rsTeachMode_options$teach_font_size) # number has to be integer
     rstudioapi::applyTheme(rsTeachMode_options$teach_theme_name) # insert name of theme for teaching here
@@ -53,24 +53,24 @@ toggle_teach_mode <- function(){
 #' set_teach_mode_settings()
 #' }
 set_teach_mode_settings <- function(current_mode = "user", user_theme_name = get_current_editor_theme(), user_font_size = get_current_font_size(), teach_theme_name = "Chrome", teach_font_size = 24, quiet = TRUE) {
-  if(!current_mode %in% c("user", "teach")){
+  if (!current_mode %in% c("user", "teach")) {
     stop("`current_mode` must be either 'user' or 'teach'.")
   }
-  if(!user_theme_name %in% vapply(rstudioapi::getThemes(), `[[`, "name", FUN.VALUE =character(1))){
+  if (!user_theme_name %in% vapply(rstudioapi::getThemes(), `[[`, "name", FUN.VALUE = character(1))) {
     stop(paste0("Specified `user_theme_name` of '", user_theme_name, "' is not an installed theme."), call. = FALSE)
   }
-  if(!teach_theme_name %in% vapply(rstudioapi::getThemes(), `[[`, "name", FUN.VALUE =character(1))){
+  if (!teach_theme_name %in% vapply(rstudioapi::getThemes(), `[[`, "name", FUN.VALUE = character(1))) {
     stop(paste0("Specified `teach_theme_name` of '", teach_theme_name, "' is not an installed theme."), call. = FALSE)
   }
-  if(!is.numeric(user_font_size)){
+  if (!is.numeric(user_font_size)) {
     stop("Specified `user_font_size` must be of type 'numeric'.", call. = FALSE)
   }
-  if(!is.numeric(teach_font_size)){
+  if (!is.numeric(teach_font_size)) {
     stop("Specified `teach_font_size` must be of type 'numeric'.", call. = FALSE)
   }
 
 
-  rsTeachMode_options = list(
+  rsTeachMode_options <- list(
     mode = current_mode,
     user_theme_name = user_theme_name,
     user_font_size = user_font_size,
@@ -80,10 +80,9 @@ set_teach_mode_settings <- function(current_mode = "user", user_theme_name = get
 
   options(rsTeachMode = rsTeachMode_options)
 
-  if(!quiet){
+  if (!quiet) {
     message("To keep your settings between sessions, add the following line to you .Rprofile (`usethis::edit_r_profile()`)")
-    message(paste0("options(rsTeachMode = list(mode = ", "'",rsTeachMode_options$mode,"', user_theme_name = '",  rsTeachMode_options$user_theme_name,"'", ", user_font_size = ",user_font_size, ", teach_theme_name = '", rsTeachMode_options$teach_theme_name, "', teach_font_size = ", rsTeachMode_options$teach_font_size, "))"
-                ))
+    message(paste0("options(rsTeachMode = list(mode = ", "'", rsTeachMode_options$mode, "', user_theme_name = '", rsTeachMode_options$user_theme_name, "'", ", user_font_size = ", user_font_size, ", teach_theme_name = '", rsTeachMode_options$teach_theme_name, "', teach_font_size = ", rsTeachMode_options$teach_font_size, "))"))
   }
   invisible(rsTeachMode_options)
 }

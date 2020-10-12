@@ -7,6 +7,6 @@
 #' \dontrun{
 #' get_current_editor_theme
 #' }
-get_current_editor_theme <- function(){
+get_current_editor_theme <- function() {
   rstudioapi::getThemeInfo()$editor
 }
