@@ -59,7 +59,7 @@ This package is under development and very experimental but can be
 installed from github using:
 
 ``` r
-remotes::install_github("murraycadzow/rsTeachMode")
+remotes::install_github("murraycadzow/rsTeachMode@main")
 ```
 
 ## Inital setup

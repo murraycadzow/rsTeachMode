@@ -61,7 +61,7 @@ Then you can run `.toggle()` when you want to switch between user and teaching m
 This package is under development and very experimental but can be installed from github using:
 
 ``` r
-remotes::install_github("murraycadzow/rsTeachMode")
+remotes::install_github("murraycadzow/rsTeachMode@main")
 ```
 
 
