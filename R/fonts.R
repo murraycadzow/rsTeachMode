@@ -18,8 +18,12 @@ change_font_size <- function(pt) {
   if(pt < 6){
     stop("`pt` must not be smaller than 6.", call. = FALSE)
   }
-
-  rstudioapi::writeRStudioPreference("font_size_points", as.integer(pt))
+  # check for the data type that rstudio is currently using for the value
+  if(class(rstudioapi::readRStudioPreference("font_size_points", FALSE)) == "integer"){
+    rstudioapi::writeRStudioPreference("font_size_points", as.integer(pt))
+  } else {
+    rstudioapi::writeRStudioPreference("font_size_points", as.numeric(pt))
+  }
 }
 
 
@@ -78,8 +82,15 @@ change_font_size_addin <- function() {
 #' increment_font_size()
 #' }
 increment_font_size <- function(change = 2) {
+  if(!is.numeric(change)){
+    stop("`change` must be numeric.", call. = FALSE)
+  }
+  if( change < 0){
+    stop("`change` must be positive.", call. = FALSE)
+  }
+
   current_font_size <- rstudioapi::readRStudioPreference("font_size_points", FALSE)
-  rstudioapi::writeRStudioPreference("font_size_points", as.integer(current_font_size + change))
+  change_font_size(current_font_size + floor(change))
 }
 
 
@@ -98,9 +109,16 @@ increment_font_size <- function(change = 2) {
 #' decrement_font_size(change = 6)
 #' }
 decrement_font_size <- function(change = 2) {
+  if(!is.numeric(change)){
+    stop("`change` must be numeric.", call. = FALSE)
+  }
+  if( change < 0){
+    stop("`change` must be positive.", call. = FALSE)
+  }
+
   current_font_size <- rstudioapi::readRStudioPreference("font_size_points", FALSE)
   if(current_font_size > 6){
-    rstudioapi::writeRStudioPreference("font_size_points", as.integer(current_font_size - change))
+    change_font_size(current_font_size - floor(change))
   }
 }
 
