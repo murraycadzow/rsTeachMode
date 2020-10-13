@@ -84,18 +84,33 @@
 <span class="co"># Requires {rstudioapi} to be installed</span>
 <span class="va">.toggle</span> <span class="op">&lt;-</span> <span class="kw">function</span><span class="op">(</span><span class="op">)</span><span class="op">{</span>
   <span class="co"># Assumes you are in user mode if first time running in session</span>
-  <span class="va">rsTeachMode_options</span> <span class="op">&lt;-</span>  <span class="fu"><a href="https://rdrr.io/r/base/options.html">getOption</a></span><span class="op">(</span><span class="st">"rsTeachMode"</span><span class="op">)</span>
-  <span class="kw">if</span> <span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/NULL.html">is.null</a></span><span class="op">(</span><span class="va">rsTeachMode_options</span><span class="op">)</span><span class="op">)</span> <span class="va">rsTeachMode_options</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html">list</a></span><span class="op">(</span>mode <span class="op">=</span> <span class="st">"user"</span><span class="op">)</span>
+  <span class="va">rsTeachMode_options</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/options.html">getOption</a></span><span class="op">(</span><span class="st">"rsTeachMode"</span><span class="op">)</span>
+  <span class="kw">if</span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/NULL.html">is.null</a></span><span class="op">(</span><span class="va">rsTeachMode_options</span><span class="op">)</span><span class="op">)</span><span class="op">{</span>
+    
+    <span class="co"># CHANGE SETTINGS HERE ####</span>
+    <span class="va">rsTeachMode_options</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html">list</a></span><span class="op">(</span>
+      mode <span class="op">=</span> <span class="st">"user"</span>, <span class="co"># start in user mode. Options are "user" or "teach"</span>
+      user_theme_name <span class="op">=</span> <span class="st">"Solarized Dark"</span>, <span class="co"># change to theme name of choice for user</span>
+      user_font_size <span class="op">=</span> <span class="fl">12</span>, <span class="co"># change to desired font size</span>
+      teach_theme_name <span class="op">=</span> <span class="st">"Chrome"</span>, <span class="co"># change to theme name of choice for teaching</span>
+      teach_font_size <span class="op">=</span> <span class="fl">24</span> <span class="co"># change to desired font size</span>
+    <span class="op">)</span>
+    <span class="co">###########################</span>
+  <span class="op">}</span>
+  
+  <span class="co"># use the data type currently being used by the system</span>
+  <span class="kw">if</span> <span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/class.html">class</a></span><span class="op">(</span><span class="fu">rstudioapi</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/rstudioapi/man/readPreference.html">readPreference</a></span><span class="op">(</span><span class="st">"font_size_points"</span>, <span class="cn">FALSE</span><span class="op">)</span><span class="op">)</span> <span class="op">==</span> <span class="st">"integer"</span><span class="op">)</span> <span class="op">{</span>
+    <span class="va">rsTeachMode_options</span><span class="op">$</span><span class="va">user_font_size</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/integer.html">as.integer</a></span><span class="op">(</span><span class="va">rsTeachMode_options</span><span class="op">$</span><span class="va">user_font_size</span><span class="op">)</span>
+    <span class="va">rsTeachMode_options</span><span class="op">$</span><span class="va">teach_font_size</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/integer.html">as.integer</a></span><span class="op">(</span><span class="va">rsTeachMode_options</span><span class="op">$</span><span class="va">teach_font_size</span><span class="op">)</span>
+  <span class="op">}</span>
   
   <span class="co"># teach -&gt; user</span>
   <span class="kw">if</span> <span class="op">(</span><span class="va">rsTeachMode_options</span><span class="op">$</span><span class="va">mode</span> <span class="op">==</span> <span class="st">"teach"</span><span class="op">)</span> <span class="op">{</span>
-    <span class="co"># select what you want your user settings to be here</span>
-    <span class="fu">rstudioapi</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/rstudioapi/man/writeRStudioPreference.html">writeRStudioPreference</a></span><span class="op">(</span><span class="st">"font_size_points"</span>, <span class="fl">12L</span><span class="op">)</span> <span class="co"># number has to be integer</span>
-    <span class="fu">rstudioapi</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/rstudioapi/man/applyTheme.html">applyTheme</a></span><span class="op">(</span><span class="st">"Solarized Light"</span><span class="op">)</span> <span class="co"># insert name of theme for user here</span>
+    <span class="fu">rstudioapi</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/rstudioapi/man/writeRStudioPreference.html">writeRStudioPreference</a></span><span class="op">(</span><span class="st">"font_size_points"</span>, <span class="va">rsTeachMode_options</span><span class="op">$</span><span class="va">user_font_size</span><span class="op">)</span>
+    <span class="fu">rstudioapi</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/rstudioapi/man/applyTheme.html">applyTheme</a></span><span class="op">(</span><span class="va">rsTeachMode_options</span><span class="op">$</span><span class="va">user_theme_name</span><span class="op">)</span>
   <span class="op">}</span> <span class="kw">else</span> <span class="op">{</span><span class="co"># user -&gt; teach</span>
-    <span class="co"># select what you want your teaching settings to be</span>
-    <span class="fu">rstudioapi</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/rstudioapi/man/writeRStudioPreference.html">writeRStudioPreference</a></span><span class="op">(</span><span class="st">"font_size_points"</span>, <span class="fl">24L</span><span class="op">)</span> <span class="co"># number has to be integer</span>
-    <span class="fu">rstudioapi</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/rstudioapi/man/applyTheme.html">applyTheme</a></span><span class="op">(</span><span class="st">"Chrome"</span><span class="op">)</span> <span class="co"># insert name of theme for teaching here</span>
+    <span class="fu">rstudioapi</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/rstudioapi/man/writeRStudioPreference.html">writeRStudioPreference</a></span><span class="op">(</span><span class="st">"font_size_points"</span>, <span class="va">rsTeachMode_options</span><span class="op">$</span><span class="va">teach_font_size</span><span class="op">)</span>
+    <span class="fu">rstudioapi</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/rstudioapi/man/applyTheme.html">applyTheme</a></span><span class="op">(</span><span class="va">rsTeachMode_options</span><span class="op">$</span><span class="va">teach_theme_name</span><span class="op">)</span>
   <span class="op">}</span>
   
   <span class="co"># flip the mode in the stored options</span>
