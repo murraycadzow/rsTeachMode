@@ -35,18 +35,33 @@ Insert the following into your `.Rprofile` which can be opened (if you have `{us
 # Requires {rstudioapi} to be installed
 .toggle <- function(){
   # Assumes you are in user mode if first time running in session
-  rsTeachMode_options <-  getOption("rsTeachMode")
-  if (is.null(rsTeachMode_options)) rsTeachMode_options <- list(mode = "user")
+  rsTeachMode_options <- getOption("rsTeachMode")
+  if(is.null(rsTeachMode_options)){
+    
+    # CHANGE SETTINGS HERE ####
+    rsTeachMode_options <- list(
+      mode = "user", # start in user mode. Options are "user" or "teach"
+      user_theme_name = "Solarized Dark", # change to theme name of choice for user
+      user_font_size = 12, # change to desired font size
+      teach_theme_name = "Chrome", # change to theme name of choice for teaching
+      teach_font_size = 24 # change to desired font size
+    )
+    ###########################
+  }
+  
+  # use the data type currently being used by the system
+  if (class(rstudioapi::readPreference("font_size_points", FALSE)) == "integer") {
+    rsTeachMode_options$user_font_size <- as.integer(rsTeachMode_options$user_font_size)
+    rsTeachMode_options$teach_font_size <- as.integer(rsTeachMode_options$teach_font_size)
+  }
   
   # teach -> user
   if (rsTeachMode_options$mode == "teach") {
-    # select what you want your user settings to be here
-    rstudioapi::writeRStudioPreference("font_size_points", 12L) # number has to be integer
-    rstudioapi::applyTheme("Solarized Light") # insert name of theme for user here
+    rstudioapi::writeRStudioPreference("font_size_points", rsTeachMode_options$user_font_size)
+    rstudioapi::applyTheme(rsTeachMode_options$user_theme_name)
   } else {# user -> teach
-    # select what you want your teaching settings to be
-    rstudioapi::writeRStudioPreference("font_size_points", 24L) # number has to be integer
-    rstudioapi::applyTheme("Chrome") # insert name of theme for teaching here
+    rstudioapi::writeRStudioPreference("font_size_points", rsTeachMode_options$teach_font_size)
+    rstudioapi::applyTheme(rsTeachMode_options$teach_theme_name)
   }
   
   # flip the mode in the stored options
